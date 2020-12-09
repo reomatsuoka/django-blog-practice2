@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+
+<div class="my-4">
+    <h2>投稿</h2>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="formpost">
+        {% render_field form.title class="form_control" placehorder="タイトルを入力" %}
+    </div>
+    <div class="formpost">
+        {% render_field form.content class="form_control" placehorder="内容を入力" %}
+    </div>
+    <button class="btn btn-warning" type="submit">投稿する</button>
+</form>
+
+{% endblock %}
